@@ -1,9 +1,17 @@
-from fastapi import FastAPI
+import os
+
+from typing import List
+
+from fastapi import FastAPI, File, Form, UploadFile
+
+from starlette.requests import Request
 from starlette.applications import Starlette
 from starlette.templating import Jinja2Templates
 from starlette.staticfiles import StaticFiles
 from starlette.responses import HTMLResponse
 
+
+import myhandler as my
 
 templates = Jinja2Templates(directory='templates')
 
@@ -39,6 +47,30 @@ async def homepage(request):
 @app.route('/services.html')
 async def homepage(request):
     return templates.TemplateResponse('services.html', {'request': request})
-# @app.route('/index-gray.html')
-# async def homepage(request):
-#     return templates.TemplateResponse('index-gray.html', {'request': request}) 
+
+@app.route('/quotes.html')
+async def homepage(request):
+    return templates.TemplateResponse('quotes.html', {'request': request})
+
+@app.post('/orderdesk')
+async def homepage(request: Request, 
+                price: float = Form(...), lot: int = Form(...),
+                itemname: str = Form(...), action: str = Form(...), connect: int = Form(...)):
+    print('--------------- quotes received {} {}'.format(price, lot))
+    print('--------------- quotes received {} {} connect {}'.format(itemname, action, connect))
+    my.enter_tst('Transactions', 'lina', itemname, action, lot, price)
+    found = my.retrieve_tst('Transactions', 'lina', 'SELL')
+    print('............... quotes found {}'.format(found))
+    return templates.TemplateResponse('quotes.html', {'request': request})
+
+@app.post("/upload1")
+async def create_file(files: List[UploadFile] = File(...)):
+    info = []
+    for f in files:
+        bt = f.file.read()
+        nf = open('files/{}'.format(f.filename), 'wb')
+        nf.write(bt)
+        nf.close()
+        info += [ (f.filename, f.content_type, len(bt)) ]
+    return {"filenames": info}
+
