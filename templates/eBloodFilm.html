@@ -1,0 +1,283 @@
+<style>
+
+table{
+	border-collapse: collapse;
+	width: 50%;
+}
+
+th, td{
+	text-align: left;
+	padding:8px;
+}
+tr:nth-child(even){background-color:#f2f2f2}
+th{
+	background-color: #00aae4;
+	color: white;
+}
+</style>
+<html>
+<head>
+
+<!--
+Template 2067 Education
+http://www.tooplate.com/view/2067-education
+-->
+<link href="{{ url_for('static', path='/tooplate_style.css') }}" rel="stylesheet">
+
+<script src="{{ url_for('static', path='/js/jquery-1.6.3.js') }}" rel="stylesheet"></script>
+
+<link href ="{{url_for('static',path='/css/ddsmoothmenu.css')}}" rel="stylesheet" >
+
+<script src="{{ url_for('static', path='/js/ddsmoothmenu.js') }}" rel="stylesheet"></script>
+
+<script type="text/javascript">
+
+ddsmoothmenu.init({
+    mainmenuid: "tooplate_menu", //menu DIV id
+    orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+    classname: 'ddsmoothmenu', //class added to menu's outer DIV
+    //customtheme: ["#1c5a80", "#18374a"],
+    contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+
+</script>
+
+ <link href ="{{url_for('static',path='/css/slimbox2.css')}}" rel="stylesheet">
+    <script src="{{ url_for('static', path='/js/slimbox2.js') }}" rel="stylesheet" ></script>
+    <link href ="{{url_for('static',path='/css/nivo-slider.css')}}" rel="stylesheet" >
+
+</head>
+<body>
+
+  <div id="tooplate_header">
+    <a href="index.html" class="sitetitle">Education Template</a>  
+    <div id="tooplate_menu" class="ddsmoothmenu">
+    
+        <ul>
+            <li><a href="index.html" class="selected">Home</a></li>
+            <li><a href="services.html">Services</a>
+                <ul>
+                    <li><a href="digital.html">Digital</a></li>
+                    <li><a href="standard.html">Standard</a></li>
+                    <li><a href="activities.html">Activities</a></li>
+                    <li><a href="quotes.html">Quotes</a></li>
+                                                                                            
+                </ul>
+            </li>
+             <li><a href="client.html">Client</a></li>    
+            <li><a href="team.html">Our Team</a></li>                
+            <li class="last"><a href="contact.html" class="last">Contact</a></li>
+        </ul>
+        <br style="clear: left" />
+    </div> <!-- end of tooplate_menu -->      
+</div><!-- END of header -->
+    <div id="tooplate_main">
+        <div id="tooplate_content" class="left">
+            <form id="form-order" action="/ebloodfilmcount" method="post" name="input">
+               <h2>FINAL REPORT FOR ONLINE ENTRY OF MANUAL eBLOOD FILM DIFFERENTIAL COUNT</h2>
+<!-- <table id="" class="display" style="width:100%"> -->
+<table>
+<thead>
+<tr>
+  <th>Leuckocytes</th>
+  <th>Blood Film Count</th>
+  <th>Units (%)</th>
+  
+
+  </tr>
+  </thead>
+     
+     <tr>
+       <td> Neutrophill </td>
+       <td><input type="number" id="count1" name="count1" value=""></td>
+       <td><input type="number" id="unit1" name="unit1" value=""></td>
+     </tr>
+
+      <tr>
+       <td> Eosinophill </td>
+       <td><input type="number" id="count2" name="count2" value=""></td>
+       <td><input type="number" id="unit2" name="unit2" value=""></td>
+     </tr>
+
+       <tr>
+       <td> Basophill </td>
+       <td><input type="number" id="count3" name="count3" value=""></td>
+       <td><input type="number" id="unit3" name="unit3" value=""></td>
+     </tr>
+
+       <tr>
+       <td> Monocyte </td>
+       <td><input type="number" id="count4" name="count4" value=""></td>
+       <td><input type="number" id="unit4" name="unit4" value=""></td>
+     </tr>
+
+      <tr>
+       <td> Lymphocyte </td>
+       <td><input type="number" id="count5" name="count5" value=""></td>
+       <td><input type="number" id="unit5" name="unit5" value=""></td>
+     </tr>
+
+      <tr>
+       <td> Blast Cell </td>
+       <td><input type="number" id="count6" name="count6" value=""></td>
+       <td><input type="number" id="unit6" name="unit6" value=""></td>
+     </tr>
+
+      <tr>
+       <td> Promyelocyte </td>
+       <td><input type="number" id="count7" name="count7" value=""></td>
+       <td><input type="number" id="unit7" name="unit7" value=""></td>
+     </tr>
+
+      <tr>
+       <td> Myelocyte </td>
+       <td><input type="number" id="count8" name="count8" value=""></td>
+       <td><input type="number" id="unit8" name="unit8" value=""></td>
+     </tr>
+
+      <tr>
+       <td> Metamyelocyte </td>
+       <td><input type="number" id="count9" name="count9" value=""></td>
+       <td><input type="number" id="unit9" name="unit9" value=""></td>
+     </tr>
+
+      <tr>
+       <td> Reactive Lymphocyctes </td>
+       <td><input type="number" id="count10" name="count10" value=""></td>
+       <td><input type="number" id="unit10" name="unit10" value=""></td>
+     </tr>
+
+       <tr>
+       <td> Nucleated RBC </td>
+       <td><input type="number" id="count11" name="count11" value=""></td>
+       <td><input type="text" id="unit11" name="unit11" value=""></td>
+     </tr>
+
+       <tr>
+       <td> Others </td>
+       <td><input type="number" id="count12" name="count12" value=""></td>
+       <td><input type="number" id="unit12" name="unit12" value=""></td>
+     </tr>
+</table>
+<button id="button-order" type="submit" name='connect' value=1>Submit</button>
+
+                </form>
+            </div> 
+            <hr class="m60" />
+            
+            
+            
+            
+        </div>
+        <div id="tooplate_sidebar" class="right">
+            <!-- <div class="content_wrapper content_mb_60">
+                <h3>Categories</h3>
+                <ul class="sidebar_link">
+                     <li><a href="#">Consectetur adipiscing eli</a></li>
+                    <li><a href="#">Nullam vulputate est</a></li>
+                    <li><a href="#">Duis porta velit</a></li>
+                    <li><a href="#">Pretium suscipit</a></li>
+                    <li><a href="#">Nullam eu diam</a></li>
+                    <li><a href="#">Duis in libero est</a></li>
+                    <li><a href="#">Aenean tincidunt</a></li>
+                    <li><a href="#">Morbi tempus iaculis</a></li>
+                </ul>
+            </div> -->
+            
+           <!-- <div class="content_wrapper content_mb_60">
+                <h3>Contact Us</h3>
+                <ul class="comment_list">
+                    <li>
+                        <span>MCPATH QAP SDN BHD (1032288-D)</span>
+                        <span class="comment_meta">
+                          
+                        </span>
+                    </li>
+                    <li>
+                        <span>Academy of Medicine of Malaysia,
+                              Unit 1.6, Level 1, Enterprise 3B, Technology Park Malaysia (TPM), Jalan Innovasi 1, Lebuhraya Puchong - Sungei Besi, Bukit Jalil 57000 Kuala Lumpur, Wilayah Persekutuan.
+                              Tel: 018-8728805         
+                              Email: mcqas.info@gmail.com </span>
+                        <span class="comment_meta">
+                            
+                        </span>
+                    </li>
+                  
+                </ul>
+            </div> -->
+            
+        </div>          
+        <div class="clear h30"></div>
+        <div style="display:none;" class="nav_up" id="nav_up"></div>
+    </div>    <!-- END of tooplate_main -->
+
+
+<div id="tooplate_footer_wrapper">
+    <div id="tooplate_footer">
+        <div class="col_4">
+            <h4>Pages</h4>
+            <ul class="nobullet bottom_list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        
+        <div class="col_4">
+            <h4>Our Partners</h4>
+            <ul class="nobullet bottom_list">
+                <li><a href="#">Website Designs</a></li>
+                <li><a href="#">Digital Blog</a></li>
+                <li><a href="#">Image Gallery</a></li>
+                <li><a href="#">HTML Web Templates</a></li>
+                <li><a href="#">Preminum Themes</a></li>
+            </ul>
+        </div>
+        
+         <div class="col_4">
+            <h4>About</h4>
+            <p> Praesent eu neque lectus, ut congue purus. Donec pellentesque, erat vitae tempus volutpat, augue diam pulvinar orci.</p>
+            <a href="#" class="more">More</a>
+        </div>
+        <div class="col_4 no_margin_right">
+            <h4>Twitter</h4>
+            <p>"Lorem ipsum dolor sit amet consectetur adipiscing elit <a href="#">#Donec</a> ante nibh sagittis ut lobortis a, posuere vel sem"</p>
+            <a href="#">Follow me on Twitter</a>
+        </div>
+        <div class="clear"></div>
+    </div> <!-- END of tooplate_footer -->
+</div> <!-- END of tooplate_footer_wrapper -->
+
+<div id="tooplate_copyright_wrapper">
+    <div id="tooplate_copyright">
+        Copyright © 2019 by McPath QAP Sdn Bhd. 
+        
+    </div>
+</div>
+
+ <script src="{{ url_for('static', path='/js/scroll-startstop.events.jquery.js') }}" rel="stylesheet" ></script>
+<script type="text/javascript">
+    $(function() {
+        var $elem = $('#content');
+        
+        $('#nav_up').fadeIn('slow');
+        
+        $(window).bind('scrollstart', function(){
+            $('#nav_up,#nav_down').stop().animate({'opacity':'0.2'});
+        });
+        $(window).bind('scrollstop', function(){
+            $('#nav_up,#nav_down').stop().animate({'opacity':'1'});
+        });
+        
+        $('#nav_up').click(
+            function (e) {
+                $('html, body').animate({scrollTop: '0px'}, 800);
+            }
+        );
+    });
+</script>
+
+</body>
+</html>
